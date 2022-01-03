@@ -2,6 +2,11 @@ import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 
 export default function InputReceived() {
+  const [date, setDate] = useState('');
+  const [name, setName] = useState('');
+  const [amount, setAmount] = useState(0);
+  const [supplier, setSupplier] = useState('');
+
   return (
     <div className="container mx-auto">
       <div>
@@ -11,21 +16,35 @@ export default function InputReceived() {
         <div className="grid grid-cols md:grid-cols-2 lg:grid-cols-4 gap-4">
           <label className="block">
             <span className="text-gray-700">Tanggal</span>
-            <input className="block form-input bg-gray-100 focus:bg-white text-sm rounded-lg border-transparent w-full p-2 mt-1" type="date" />
+            <input
+              className="block form-input bg-gray-100 focus:bg-white text-sm rounded-lg border-transparent w-full p-2 mt-1"
+              type="date"
+              onChange={event => setDate(event.target.value)}
+            />
           </label>
           <label className="block">
             <span className="text-gray-700">Nama Barang</span>
-            <select className="block form-select bg-gray-100 focus:bg-white text-sm rounded-lg border-transparent w-full p-2 mt-1">
+            <select
+              className="block form-select bg-gray-100 focus:bg-white text-sm rounded-lg border-transparent w-full p-2 mt-1"
+              onChange={event => setName(event.target.value)}
+            >
               <option>Pilih Barang</option>
             </select>
           </label>
           <label className="block">
             <span className="text-gray-700">Jumlah (pcs)</span>
-            <input className="block form-input bg-gray-100 focus:bg-white text-sm rounded-lg border-transparent w-full p-2 mt-1" type="number" />
+            <input
+              className="block form-input bg-gray-100 focus:bg-white text-sm rounded-lg border-transparent w-full p-2 mt-1"
+              type="number"
+              onChange={event => setAmount(event.target.value)}
+              />
           </label>
           <label className="block">
             <span className="text-gray-700">Pemasok</span>
-            <select className="block form-select bg-gray-100 focus:bg-white text-sm rounded-lg border-transparent w-full p-2 mt-1">
+            <select
+              className="block form-select bg-gray-100 focus:bg-white text-sm rounded-lg border-transparent w-full p-2 mt-1"
+              onChange={event => setSupplier(event.target.value)}
+              >
               <option>Pilih Pemasok</option>
             </select>
           </label>
