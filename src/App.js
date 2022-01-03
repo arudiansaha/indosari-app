@@ -1,16 +1,18 @@
-import './App.css';
+import React from 'react';
 import Navigation from './components/Navigation'
 import Routes from './components/Routes'
 
-export default function App() {
-  return (
-    <div>
+export default class App extends React.Component {
+  render() {
+    return (
       <div>
-        <Navigation />
+        <div>
+          <Navigation />
+        </div>
+        <div>
+          <Routes />
+        </div>
       </div>
-      <div>
-        <Routes />
-      </div>
-    </div>
-  );
+    );
+  }
 }
