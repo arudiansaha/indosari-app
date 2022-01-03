@@ -7,9 +7,9 @@ export default function NavRoutes() {
   return (
     <div>
       <Routes>
-        <Route path="/dashboard" element={ <Dashboard /> } />
-        <Route path="/input" element={ <Input /> } />
-        <Route path="/report" element={ <Report /> } />
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/input" element={<Input />} />
+        <Route path="/report" element={<Report />} />
       </Routes>
     </div>
   );

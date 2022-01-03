@@ -2,7 +2,7 @@
 
 ## Roadmap
 
-- [ ] Add input function
+- [x] Add input function
 - [ ] Add report function
 - [ ] Add delete function
 - [ ] Add update function

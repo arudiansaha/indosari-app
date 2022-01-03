@@ -7,6 +7,36 @@ export default function InputSent() {
   const [amount, setAmount] = useState(0);
   const [receiver, setReceiver] = useState('');
 
+  const [itemList, setItemList] = useState([]);
+  const [receiverList, setReceiverList] = useState([]);
+
+  const addData = () => {
+    Axios.post('http://localhost:3080/api/create/sent', {
+      date: date,
+      name: name,
+      amount: amount,
+      receiver: receiver,
+      itemId: name,
+      receiverId: receiver,
+    }).then(() => {
+      console.log('Succeded');
+    });
+  };
+
+  useEffect(() => {
+    Axios.get('http://localhost:3080/api/get/item')
+      .then((response) => {
+        setItemList(response.data);
+      });
+    }, []);
+
+  useEffect(() => {
+    Axios.get('http://localhost:3080/api/get/receiver')
+      .then((response) => {
+        setReceiverList(response.data);
+      });
+    }, []);
+
   return (
     <div className="container mx-auto space-y-2">
       <div>
@@ -28,7 +58,10 @@ export default function InputSent() {
               className="block form-select bg-gray-100 focus:bg-white text-sm rounded-lg border-transparent w-full p-2 mt-1"
               onChange={event => setName(event.target.value)}
             >
-              <option>Pilih Barang</option>
+              <option disabled>Pilih Barang</option>
+              {itemList.map((value) => {
+                return <option key={value.id} value={value.name}>{value.name}</option>
+              })}
             </select>
           </label>
           <label className="block">
@@ -36,6 +69,7 @@ export default function InputSent() {
             <input
               className="block form-input bg-gray-100 focus:bg-white text-sm rounded-lg border-transparent w-full p-2 mt-1"
               type="number"
+              placeholder="0"
               onChange={event => setAmount(event.target.value)}
               />
           </label>
@@ -45,13 +79,21 @@ export default function InputSent() {
               className="block form-select bg-gray-100 focus:bg-white text-sm rounded-lg border-transparent w-full p-2 mt-1"
               onChange={event => setReceiver(event.target.value)}
               >
-              <option>Pilih Penerima</option>
+              <option disabled>Pilih Penerima</option>
+              {receiverList.map((value) => {
+                return <option key={value.id} value={value.name}>{value.name}</option>
+              })}
             </select>
           </label>
         </div>
         <div className="flex justify-end pt-4 gap-2">
           <button className="bg-red-500 hover:bg-red-600 focus:outline-none focus:ring focus:ring-red-300 text-sm text-red-50 font-bold rounded-lg shadow p-2">Batal</button>
-          <button className="bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300 text-sm text-red-50 font-bold rounded-lg shadow p-2">Selesai</button>
+          <button
+            className="bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300 text-sm text-red-50 font-bold rounded-lg shadow p-2"
+            onClick={addData}
+          >
+            Selesai
+          </button>
         </div>
       </div>
     </div>

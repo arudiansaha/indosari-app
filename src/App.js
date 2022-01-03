@@ -5,11 +5,11 @@ import NavRoutes from './components/NavRoutes'
 export default class App extends React.Component {
   render() {
     return (
-      <div className="container mx-auto flex relative">
-        <div className="bg-gray-50">
+      <div className="relative flex">
+        <div className="static bg-gray-50 border-r border-gray-200 w-64">
           <Navigation />
         </div>
-        <div className="bg-white">
+        <div className="container mx-auto bg-white">
           <NavRoutes />
         </div>
       </div>
