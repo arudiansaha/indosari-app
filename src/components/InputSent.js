@@ -8,7 +8,7 @@ export default function InputSent() {
   const [receiver, setReceiver] = useState('');
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto space-y-2">
       <div>
         <h1 className="font-sm font-bold">Input Data Barang Keluar</h1>
       </div>
@@ -49,7 +49,7 @@ export default function InputSent() {
             </select>
           </label>
         </div>
-        <div>
+        <div className="flex justify-end pt-4 gap-2">
           <button className="bg-red-500 hover:bg-red-600 focus:outline-none focus:ring focus:ring-red-300 text-sm text-red-50 font-bold rounded-lg shadow p-2">Batal</button>
           <button className="bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300 text-sm text-red-50 font-bold rounded-lg shadow p-2">Selesai</button>
         </div>
