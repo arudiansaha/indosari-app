@@ -1,11 +1,18 @@
 import React from 'react';
-import InputReceived from '../components/InputReceived';
-import InputSent from '../components/InputSent';
+import ReportReceived from '../components/ReportReceived';
+import ReportSent from '../components/ReportSent'
 
 export default class Report extends React.Component {
   render() {
     return (
-      <div>
+      <div className="container mx-auto p-8">
+        <div>
+          <ReportReceived />
+        </div>
+        <br />
+        <div>
+          <ReportSent />
+        </div>
       </div>
     );
   }

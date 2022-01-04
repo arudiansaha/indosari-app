@@ -40,7 +40,7 @@ export default function InputSent() {
   return (
     <div className="container mx-auto space-y-2">
       <div>
-        <h1 className="font-sm font-bold">Input Data Barang Keluar</h1>
+        <h1 className="text-md font-bold">Input Data Barang Keluar</h1>
       </div>
       <div className="bg-white text-sm rounded-lg shadow p-4">
         <div className="grid grid-cols md:grid-cols-2 lg:grid-cols-4 gap-4">

@@ -3,8 +3,8 @@
 ## Roadmap
 
 - [x] Add input function
-- [ ] Add report function
-- [ ] Add delete function
+- [x] Add report function
+- [x] Add delete function
 - [ ] Add update function
-- [ ] Connect to backend
+- [x] Connect to backend
 - [ ] Import to pdf
