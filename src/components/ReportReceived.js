@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Axios from 'axios';
 
 export default function ReportReceived() {
@@ -26,7 +27,7 @@ export default function ReportReceived() {
           <h1 className="text-md font-bold">Laporang Barang Masuk</h1>
         </div>
         <div>
-          <button className="flex bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300 text-sm text-red-50 font-bold rounded-lg shadow p-2 gap-2">
+          <button className="flex bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300 text-sm text-red-50 font-bold rounded-lg shadow p-2 shadow-blue-500/50 gap-2">
             <p className="text-sm">Cetak</p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -95,18 +96,20 @@ export default function ReportReceived() {
                 <td className="text-sm text-gray-900 whitespace-nowrap py-4 px-6">{value.supplier}</td>
                 <td className="text-sm text-gray-900 whitespace-nowrap py-4 px-6">
                   <div className="flex gap-2">
-                    <button className="bg-yellow-500 hover:bg-yellow-600 focus:outline-none focus:ring focus:ring-yellow-300 text-sm text-red-50 font-bold rounded-lg shadow p-2">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="h-5 w-5"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                      >
-                        <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
-                      </svg>
-                    </button>
+                    <Link to={`/update/received/${value.id}`}>
+                      <button className="bg-yellow-500 hover:bg-yellow-600 focus:outline-none focus:ring focus:ring-yellow-300 text-sm text-red-50 font-bold rounded-lg shadow shadow-yellow-500/50 p-2">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="h-5 w-5"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                        >
+                          <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
+                        </svg>
+                      </button>
+                    </Link>
                     <button
-                      className="bg-red-500 hover:bg-red-600 focus:outline-none focus:ring focus:ring-red-300 text-sm text-red-50 font-bold rounded-lg shadow p-2"
+                      className="bg-red-500 hover:bg-red-600 focus:outline-none focus:ring focus:ring-red-300 text-sm text-red-50 font-bold rounded-lg shadow shadow-red-500/50 p-2"
                       onClick={() => {deleteData(value.id)}}
                     >
                       <svg 

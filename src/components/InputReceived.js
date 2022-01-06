@@ -87,9 +87,9 @@ export default function InputReceived() {
           </label>
         </div>
         <div className="flex justify-end pt-4 gap-2">
-          <button className="bg-red-500 hover:bg-red-600 focus:outline-none focus:ring focus:ring-red-300 text-sm text-red-50 font-bold rounded-lg shadow p-2">Batal</button>
+          <button className="bg-red-500 hover:bg-red-600 focus:outline-none focus:ring focus:ring-red-300 text-sm text-red-50 font-bold rounded-lg shadow shadow-red-500/50 p-2">Batal</button>
           <button
-            className="bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300 text-sm text-red-50 font-bold rounded-lg shadow p-2"
+            className="bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300 text-sm text-red-50 font-bold rounded-lg shadow shadow-blue-500/50 p-2"
             onClick={addData}
           >
             Selesai
