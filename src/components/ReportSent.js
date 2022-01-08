@@ -27,6 +27,7 @@ export default function ReportSent() {
           <h1 className="text-md font-bold">Laporang Barang Keluar</h1>
         </div>
         <div>
+          <Link to="/print/sent">
           <button className="flex bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300 text-sm text-red-50 font-bold rounded-lg shadow shadow-blue-500/50 p-2 gap-2">
             <p className="text-sm">Cetak</p>
             <svg
@@ -42,6 +43,7 @@ export default function ReportSent() {
               />
             </svg>
           </button>
+          </Link>
         </div>
       </div>
       <div className="overflow-hidden rounded-lg shadow border-b border-gray-200">

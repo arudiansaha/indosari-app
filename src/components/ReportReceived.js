@@ -15,7 +15,7 @@ export default function ReportReceived() {
 
   const deleteData = (id) => {
     Axios.delete(`http://localhost:3080/api/delete/received/${id}`)
-      .then((response) => {
+      .then((res) => {
         setReceivedList(receivedList.filter(value => value.id != id));
       });
   };
@@ -27,6 +27,7 @@ export default function ReportReceived() {
           <h1 className="text-md font-bold">Laporang Barang Masuk</h1>
         </div>
         <div>
+          <Link to="/print/received">
           <button className="flex bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300 text-sm text-red-50 font-bold rounded-lg shadow p-2 shadow-blue-500/50 gap-2">
             <p className="text-sm">Cetak</p>
             <svg
@@ -42,6 +43,7 @@ export default function ReportReceived() {
               />
             </svg>
           </button>
+          </Link>
         </div>
       </div>
       <div className="overflow-hidden rounded-lg shadow border-b border-gray-200">
